@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 1.4.4  -->
+    <!-- Hinder 1: Hindra inte användare från att zooma med user-scalable=no eller att sätta ett maximum-scale=1 mindre än 2 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1 ">
+    <link rel="stylesheet" href="princip1Style.css">
+    <title>Märkbarhet</title>
+</head>
+<body>
+    <h1>Märkbarhet</h1>
+    <!-- Navigation -->
+    <a id="link-1" href="/princip2.html">Nästa sida</a>
+  
+    <!-- Kriterium 1.1.1 --> 
+    <div id="kriterium_1_1_1" class="guideline-div">
+        <h2>1.1.1</h2>
+    
+        <!-- Hinder 2: <img> element saknar en beskrivande altternativ text -->
+        <img class="kriterium_1_1_1" src="ltu-logo.png" width="100" >
+    
+        <!-- Hinder 3: <object> saknar en altternativ text -->
+        <object class="kriterium_1_1_1"></object>
+    
+        <!-- Hinder 4: role="img" saknar en alternativ text -->
+        <div role="img" ></div>
+
+        <!-- Hinder 5: Saknar en altternativ text för varje area i ett <map> element -->
+        <img src="ltu-logo.png" alt="LTU logotyp" usemap="#Map" width="100" />
+        <map class="kriterium_1_1_1" name="Map">
+            <area shape="rect" coords="115,193,276,234" href="Länk">
+        </map>
+
+        <!-- Hinder 6: ARIA role="meter" saknar ett tillgängligt namn -->
+        <div role="meter" class="kriterium_1_1_1" aria-label=""></div>
+
+        <!-- Hinder 7: type="image" input element saknar en alternativ text -->
+        <input type="image" src="ltu-logo.png" name="submit" height="36" width="113">
+        
+        <!-- Hinder 8: <svg> element med role="img" saknar en tillgänglig text i form av title attribut/aria-label -->
+        <svg role="img" >
+            <circle cx="30" cy="30" r="10" fill="brown"></circle>
+        </svg>
+    </div>
+
+    <!-- Kriterium 1.2.2 -->
+    <div id="kriterium_1_2_2" class="guideline-div">
+        <h2>1.2.2</h2>
+
+        <!-- Hinder 9: Måste ha <track> element -->
+        <video class="kriterium_1_2_2" controls style="width: 50%;">
+            <source src="test-video.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Kriterium 1.3.1 -->
+    <div id="kriterium_1_3_1" class="guideline-div">
+        <h2>1.3.1</h2>
+    
+        <!-- Hinder 10: Bör ej använda <p> som header -->
+        <p class="kriterium_1_3_1" id="p-som-header"><b>Paragraf som header</b></p>
+    
+        <!-- Hinder 11: Saknar ett kopplat label element-->
+        <form>
+            <input type="text" class="kriterium_1_3_1" >
+        </form>
+
+        <!-- Hinder 12: <dl> list är inte korrekt formaterad-->
+        <dl class="kriterium_1_3_1">
+            <dd>Black hot drink</dd>
+            <dt>Coffee</dt>
+            <div>
+                Milk
+                White cold drink
+            </div>
+        </dl>
+
+        <!-- Hinder 13: Bör vara innanför <dl> element -->
+        <dt class="kriterium_1_3_1">Coffee</dt>
+
+        <!-- Hinder 14: Ligger inte inom <ul> eller <ol> element -->
+        <li class="kriterium_1_3_1">Coffee</li>
+        
+        <!-- Hinder 15: <ul> eller <ol> element bör bara innehålla <li> element --> 
+        <ul class="kriterium_1_3_1">
+            <li>Rätt</li>
+            <p>Fel</p>
+        </ul>
+
+        <!-- Inkorrekt uppmärkta tables -->
+        <table class="kriterium_1_3_1">
+            <caption>Table test:</caption>
+            <tr> 
+                <!-- Hinder 16: Bör ha scope attribut-->
+                <th >Namn</th>
+                <!-- Hinder 17: Bör inte ha headers attribut-->
+                <th headers="test">Efternamn</th>
+            </tr>
+            <tr>
+                <td>Test</td>
+                <td>Testsson</td>
+            </tr>
+        </table>
+
+        <table class="kriterium_1_3_1">
+            <thead>
+                <tr>
+                <!-- Hinder 18: Bör ha scope="col" attribut -->
+                <th>Namn</th>
+                <th scope="col">Tid</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <!-- Hinder 19: Hinder 18: Bör ha scope="row" attribut -->
+                    <th>Test</th>
+                    <td>8:32</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Hinder 20: Alla <td> som ej är tomma i ett table större än 3x3 måste ha en associerad <th> -->
+        <table class="kriterium_1_3_1">
+            <caption>Löptider</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Namm</th>
+                    <th scope="col">1 km</th>
+                    <!-- Hinder 21: Bör vara <th> -->
+                    <td>5 km</td>
+                    <th scope="col">10 km</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">Testperson1</th>
+                    <td>8:32</td>
+                    <td>28:04</td>
+                    <td>1:01:16</td>
+                </tr>
+                <tr>
+                    <td scope="row">Testperson2</td>
+                    <td>7:43</td>
+                    <td>26:47</td>
+                    <td>55:38</td>
+                </tr>
+                <tr>
+                    <th scope="row">Testperson3</th>
+                    <td>7:55</td>
+                    <td>27:29</td>
+                    <td>57:04</td>
+                </tr>
+                <tr>
+                    <th scope="row">Testperson4</th>
+                    <td>7:01</td>
+                    <td>24:21</td>
+                    <td>50:35</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Hinder 22: Vissa ARIA roles måste ligga under en specifik parent element, role="tab" bör ligga under en parent med role="tablist"-->
+        <button class="kriterium_1_3_1" role="tab" aria-selected="true" aria-controls="tab-1-pane">Tab 1</button>
+  
+        <!-- Hinder 23: Vissa ARIA roles måste ha ett specifikt child element, role="tablist" bör ha child element med role="tab"-->
+        <div class="kriterium_1_3_1" role="tablist">
+            <button aria-selected="true" aria-controls="tab-1-pane">Tab 1</button>
+        </div>
+  
+        <!-- Hinder 24: Table header <th> måste ha märkarbar text -->
+        <table>
+            <tr><th></th></tr>
+        </table>
+    </div>
+
+    <!-- Kriterier 1.3.5 -->
+    <div id="kriterium_1_3_5" class="guideline-div">
+        <h2>1.3.5</h2>
+    
+        <!-- Hinder 25: Autocomplete attributet måste ha ett korrekt värde -->
+        <form>
+            <label for="fel-autocomplete">Email</label>
+            <input autocomplete="meail" type="email" id="fel-autocomplete" class="1.3.5">
+        </form>  
+    </div>
+
+    <!-- Kriterier 1.4.1 -->
+    <div id="kriterium_1_4_1" class="guideline-div">
+        <h2>1.4.1</h2>
+        <!-- Hinder 26:
+        Länkar i en block av text bör gå urskilja från bakgrunden på annat vis än endast färg (t.ex underline/font style) 
+        men bör annars ha en kontrast skillnad på mer än 3:1 men kräver då distinkt stil vid hover/focus (kräver då manuell kontroll) -->
+        <p class="kriterium_1_4_1">En block av text som inehåller en <a id="link-in-block" href="" >länk</a></p>
+    </div>
+  
+    <!-- Kriterier 1.4.2 -->
+    <div id="kriterium_1_4_2" class="guideline-div">
+        <h2>1.4.2</h2>
+        <!-- Hinder 27: Video måste ha controls attribut om den har autoplay och är längre än 3 sekunder-->
+        <video class="kriterium_1_4_2" autoplay style="width: 50%;">
+            <source src="test-video.mp4" type="video/mp4">
+            <track src="captions_en.vtt" kind="captions" srclang="en" label="english_captions">
+        </video>
+
+        <!-- Hinder 28: Audio måste ha controls attribut om den har autoplay och är längre än 3 sekunder-->
+        <audio class="kriterium_1_4_2" src="test-audio.ogg" autoplay></audio>
+
+    </div>
+
+    <div id="kriterium_1_4_3" class="guideline-div">
+        <h2>1.4.3</h2>
+        <!-- Färg kontrast -->
+        <!-- Hinder 29: Liten text (14pt (19 CSS pixels)) - Minsta kontrast: 7:1 -->
+        <p id="liten-text-kontrast">Liten text med för dålig kontrast</p>
+    
+        <!-- Hinder 30: Stor text (18pt (24 CSS pixels)) - Minsta kontrast: 4.5:1 -->
+        <p id="stor-text-kontrast">Stor text med för dålig kontrast</p>
+    </div>
+
+    <div id="kriterium_1_4_4" class="guideline-div">
+        <h2>1.4.4</h2>
+    
+        <!-- Hinder 31: Måste vara möjligt att ändra textstorlek i webbläsarens inställningar (använd rem istället för px för font-size) -->
+        <p class="kriterium_1_4_4" id="resize-text">Kan inte ändra textstorlek</p>
+    </div>
+
+    <div id="kriterium_1_4_10" class="guideline-div">
+        <h2>1.4.10</h2>
+    
+        <div id="horizontal-scroll">
+            <!-- Hinder 32: Undvik horisontell skrollning ned till 320px, använd i första hand responsiv design -->
+        </div>
+    </div>
+
+    <div id="kriterium_1_4_11" class="guideline-div">
+        <h2>1.4.11</h2>
+    
+        <!-- Hinder 33: Button komponenet bör minst ha kontrast på 3:1 -->
+        <button id="kontrast-knapp">Låg kontrast komponent</button>
+    </div>
+
+    <div id="kriterium_1_4_12" class="guideline-div">
+        <h2>1.4.12</h2>
+    
+        <!-- Hinder 34: Måste kunna ändra text radavstånd med custom stylesheets -->
+        <p class="kriterium_1_4_12" style="line-height: 1.5 !important;">Kan inte ändra line-height</p>
+    </div>
+</body>
+</html>

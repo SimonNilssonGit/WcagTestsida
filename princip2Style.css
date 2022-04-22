@@ -1,0 +1,10 @@
+/* Bör ej användas */
+#blink-text {
+    text-decoration: blink;
+}
+/* 2.4.7 */ 
+#has-keyboard-acess {
+    height: 10px;
+    overflow: auto;
+}
+

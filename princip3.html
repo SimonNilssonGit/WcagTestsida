@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- Kriterium 3.1.2 -->
+<!-- Hinder 1: Dokumentet måste ha ett giltligt lang attribut (<html lang="fel lang">) -->
+<html lang="fel lang">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Begriplighet</title>
+</head>
+<body>
+    <h1>Begriplighet</h1>
+    <!-- Navigation -->
+    <a id="link-3" href="/princip4.html">Nästa sida</a>
+    
+    <!-- Kriterium 3.2.1 -->
+    <div id="kriterium_3_2_1" class="guideline-div">
+        <h2>3.2.1</h2>
+        
+        <!-- Hinder 2: Utför inga oväntade förändringar vid fokusering (till exempel öppning av fönster eller förändring av värde)-->
+        <label for="on-focus">Oväntat vid fokusering </label>
+        <input type="text" class="kriterium_3_2_1" id="on-focus" onfocus="goToNewSite()">
+    </div>
+
+    <!-- Kriterium 3.2.2 -->
+    <div id="kriterium_3_2_2" class="guideline-div">
+        <h2>3.2.2</h2>
+
+        <!-- Hinder 3: Utför inga oväntade förändringar vid inmatning (till exempel öppning av fönster eller förändring av värde)-->
+        <label for="on-typing">Oväntat vid inmatning</label>
+        <input type="text" class="kriterium_3_2_2" id="on-typing" onchange="goToNewSite()">
+    </div>
+
+    <!-- Kriterium 3.3.2 -->
+    <div id="kriterium_3_3_2" class="guideline-div">
+        <h2>3.3.2</h2>
+
+        <!-- Hinder 4: Formulär fält får inte ha flera labels kopplat till samma id -->
+        <label for="fail">Label 1</label>
+        <label for="fail">Label 2</label>
+        <input type="text" id="fail" />
+
+    </div>
+    <script>
+        // Kriterium 3.2.1 och 3.3.2
+        function goToNewSite() {
+            // Öppnar en ny sida
+            document.getElementById("link-3").click();
+        }
+
+    </script>
+</body>
+</html>

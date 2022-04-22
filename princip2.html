@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="princip2Style.css">
+    <!-- Kriterier 2.2.1, 2.2.4, 3.2.5-->
+    <!-- Hinder 1: Timed refreh attribut bör inte användas -->
+    <meta http-equiv="refresh" content="10" url="/princip2">
+    <!-- Kriterier 2.2.2 -->
+    <!-- Hinder 2: Måste ha ett korrekt title element -->
+    <title></title>
+</head>
+<body>
+    <p>Funktionsduglighet</p>
+    <!-- Navigation -->
+    <a id="link-2" href="/princip3.html">Nästa sida</a>
+    
+    <!-- Kriterier 2.1.1 -->
+    <div id="kriterium_2_11" class="guideline-div">
+        <p>2.1.1</p>
+
+        <!-- Hinder 2: <frames> och <iframes> med fokuserbart innehåll bör inte ha tabindex="-1" -->
+        <iframe class="kriterium_2_1_1"
+            srcdoc="<button>Click me</button>"
+            tabindex="-1"
+            title="My frame is an iframe"
+        ></iframe>
+        
+        <!-- Hinder 3: Server-side image maps får inte användas -->
+        <a class="kriterium_2_1_1" href="/maps/nav.map"><img src="/images/navbar.gif" alt="test" ismap></a>
+    </div>
+
+    <!-- Kriterier 2.2.2 -->
+    <div id="kriterium_2_2_2" class="guideline-div">
+        <p>2.2.2</p>
+
+        <!-- Hinder 4: <blink> element får ej användas -->
+        <p id="blink-text"><blink>Blinkande text!</blink></p>
+        
+        <!-- Hinder 5: <marquee> element får ej användas -->
+        <marquee>Rullande text</marquee>
+    </div>
+
+    <!-- Kriterier 2.4.1 -->
+    <div id="kriterium_2_4_1" class="guideline-div">
+        <p>2.4.1</p>
+        <!-- Hinder 6: Frames måste ha ett title attribut -->
+        <iframe 
+            srcdoc="<button>Click me</button>"
+            tabindex="0"
+        ></iframe>
+
+        <!-- Hinder 7: Varje sida måste använda headings (h1/h2..), aria landmark eller intern skip länk. 
+        Så det är enkelt att skippa innehåll som header/navigation och hoppa till huvudinneållet-->
+        <div class="kriterium_2_4_1">Inga header element eller landmarks används</div>
+    </div>
+
+    <!-- Kriterier 2.4.7 -->
+    <div id="kriterium_2_4_7" class="guideline-div">
+        
+        <!-- Hinder 8: Skrollbara regioner måste ha tangentbord åtkomst -->
+        <div class="kriterium_2_4_7" id="has-keyboard-acess">
+            <button tabindex="-1">Test</button>
+        </div>
+    </div>
+
+    <!-- Kriterier 2.4.9 -->
+    <div id="kriterium_2_4_9" class="guideline-div">
+        <p>2.4.9</p>
+
+        <!-- Hinder 9: Länkar med olika syften, bör inte ha samma namn/beskrivning  -->
+        <a href="www.google.com" >Samma beskrivning</a>
+        <a href="www.twitter.com" >Samma beskrivning</a>
+    </div>
+
+    <!-- Kriterier 2.4.9 -->
+    <div id="kriterium_2_5_3" class="guideline-div">
+        <p>2.5.3</p>
+        <!-- Hinder 10: Aria-label och synliga texten bör matcha, eller att aria-label innehåller synliga texten. -->
+        <div class="kriterium_2_5_3" role="link" aria-label="Matchar inte">Next</div>
+    </div>
+</body>
+</html>

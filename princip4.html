@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robusthet</title>
+</head>
+<!-- Hinder 1: aria-hidden="true" får ej finnas direkt på <body> -->
+<body aria-hidden="true">
+    <h1>Robusthet</h1>
+
+    <!-- Navigation -->
+    <a id="link-4" href="/princip1.html">Första sidan</a>
+    
+    <div id="kriterium_4_1_1" class="guideline-div">
+        <h2>4.1.1</h2>
+        <!-- Se till att kod validerar -->
+
+        <!-- Hinder 2: Element saknar sluttagg -->
+        <p>Saknar sluttagg
+
+        <!-- Hinder 3: Får inte ha dubbelt attribut -->
+        <label for="kriterium_4_1_1">Dubbla attribut</label>
+        <input type="text" type="checkbox" class="kriterium_4_1_1" id="kriterium_4_1_1">
+
+        <!-- Hinder 4: ID attribut måste ha unika värden -->
+        <div>
+            <button id="inte-unikt-ID" class="kriterium_4_1_1">Knapp 1</button>
+            <button id="inte-unikt-ID" class="kriterium_4_1_1">Knapp 2</button>
+        </div>
+        <!-- Hinder 5: ID attribut som används av ARIA måste ha unika värden -->
+        <div role="tabpanel" aria-labelledby="tabpanel-label">
+            <h2 id="tabpanel-label">
+                Tab panel title
+            </h2>
+            <p id="tabpanel-label">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+        </div>
+    </div>
+
+    <div id="kriterium_4_1_2" class="guideline-div">
+        <h2>4.1.2</h2>
+        <!-- Hinder 6: Måste ha korrekt namn på ARIA attribut -->
+        <img class="kriterium_4_1_2" src="ltu-logo.png" alt="Dekorativ bild" aria-hiden="true" width="100">
+        
+        <!-- Hinder 7: Måste ha korrekt värde på ARIA attribut -->
+        <img class="kriterium_4_1_2" src="ltu-logo.png" alt="Dekorativ bild" aria-hidden="rtue" width="100">
+
+        <!-- Hinder 8: Alla element med role="link/button/menuitem" måste ha ett tillgängligt namn: text eller aria-label -->
+        <div role="link" class="kriterium_4_1_2" aria-label=""></div>
+        <div role="button" class="kriterium_4_1_2"></div>
+        <div role="menuitem" class="kriterium_4_1_2"></div>
+        
+        <!-- Hinder 9: ARIA input fält måste ha tillgängliga namn -->
+        <div class="kriterium_4_1_2" aria-label="" role="combobox">England</div>
+        
+        <!-- Hinder 10: ARIA toggle fält måste ha tillgängliga namn -->
+        <div class="kriterium_4_1_2" role="checkbox"></div>
+        
+        <!-- Hinder 11: ARIA tooltip måste ha tillgängliga namn -->
+        <div class="kriterium_4_1_2" role="tooltip"></div>
+        
+        <!-- Hinder 12: Ska inte gå att fokusera på element med aria-hidden attribut  -->
+        <button aria-hidden="true" >Button</button>
+        
+        <!-- Hinder 13: Buttons måste ha märkbar text -->
+        <button class="kriterium_4_1_2"></button>
+        
+        <!-- Hinder 14: Element bör endast använda tillåtna ARIA attribut för den ARIA role den har-->
+        <div role="presentation" aria-checked="false">Test</div>
+        
+        <!-- Hinder 15: Nestade interaktiva kontroller kan inte läsas av skärmläsare -->
+        <button class="kriterium_4_1_2">
+            Nested
+            <a href="nested-link">Nested och interaktiv</a>
+        </button>
+        
+        <!-- Hinder 16: Länkar måste ha märkbar text (aria-label eller inner text) -->
+        <a href="Länk" class="kriterium_4_1_2" ></a>
+        
+        <!-- Hinder 17: Select elementet måste ha ett tillgängligt namn genom ett label element (label / aria-label)-->
+        <select class="kriterium_4_1_2"></select>
+        
+        <!-- Hinder 18: aria-roledescription får endast användas på element med explicit eller implicit role värden -->
+        <div class="kriterium_4_1_2" aria-roledescription="en div">div</div>
+        
+        <!-- Hinder 19: Nödvändiga role attribut måste anges som t.ex aria-valuenow="70"  -->
+        <div class="kriterium_4_1_2" role="progressbar"> 70% </div>
+    </div>
+</body>
+</html>
